@@ -1,0 +1,30 @@
+{
+  "name": "gulp-coverage-reporter",
+  "version": "0.0.0",
+  "description": "A console-based coverage reporter for gulp-coverage.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/joshuafcole/gulp-coverage-reporter"
+  },
+  "keywords": [
+    "gulp",
+    "coverage",
+    "reporter",
+    "console"
+  ],
+  "author": "Joshua M. Cole",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/joshuafcole/gulp-coverage-reporter/issues"
+  },
+  "homepage": "https://github.com/joshuafcole/gulp-coverage-reporter",
+  "dependencies": {
+    "underscore": "^1.6.0",
+    "chalk": "^0.4.0",
+    "through2": "^0.4.1"
+  }
+}
