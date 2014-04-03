@@ -12,7 +12,8 @@ function roundPlaces(val, places) {
 }
 
 function colorize(val, colors) {
-  var i = Math.floor(val * colors.length);
+  var i = Math.floor(val / 100 * colors.length);
+  i = Math.min(i, colors.length - 1);
   return colors[i](val);
 }
 
@@ -22,8 +23,21 @@ function colorize(val, colors) {
  * }
  */
 function coverReporter(opts) {
-  var colors = opts.colors || [];
-  //@TODO: convert from thresholds to colors array.
+  var colors = opts.colors;
+  if(!colors || !colors.length) {
+    throw new Error('Must supply at least one color.');
+  }
+
+  colors = _.map(colors, function(color) {
+    var components = color.split('.');
+    return _.reduce(components, function(memo, component) {
+      memo = memo[component];
+      if(!memo) {
+        throw new Error('Invalid chalk style!');
+      }
+      return memo;
+    }, chalk);
+  });
 
   function format(attr, obj, opts) {
     var prefix = opts.prefix || '';
