@@ -14,7 +14,11 @@ function roundPlaces(val, places) {
 function colorize(val, colors) {
   var i = Math.floor(val / 100 * colors.length);
   i = Math.min(i, colors.length - 1);
-  return colors[i](val);
+  if(0 <= i && i < colors.length) {
+    return colors[i](val);
+  }
+
+  return val;
 }
 
 /**
