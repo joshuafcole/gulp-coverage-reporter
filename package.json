@@ -1,6 +1,6 @@
 {
   "name": "gulp-coverage-reporter",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A console-based coverage reporter for gulp-coverage.",
   "main": "index.js",
   "scripts": {
